@@ -1,5 +1,5 @@
 
-fileName='/Users/star/PycharmProjects/pythonProject/Robots/robots.txt'
+fileName= '/1Robots/robots.txt'
 f=open(fileName,'w')
 f.write("Use-agent:*\n"
         "Disallow:/\n"
