@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-
+import re
 html='''
 <html>
 <head><title>The Dormouse's story</title></head>
@@ -16,6 +16,7 @@ html='''
 </html>
 '''
 soup=BeautifulSoup(html,'lxml')
-print(soup.prettify())  #缩紧格式输出    对于不标准的HTML字符串可以自动更正格式，不是这个方法，而是初始化BeautifulSoup时候就解决了
-print(soup.title)
-print(soup.title.string)
+#可以根据节点名称来选择
+print(soup.find_all(name='p'))
+#根据文本选择
+print(soup.find_all(text=re.compile('Once')))
